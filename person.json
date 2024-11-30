@@ -1,0 +1,1 @@
+[{"name":"Alper","age":28,"pets":[{"hasOwner":false,"breed":"dog","age":3},{"hasOwner":true,"breed":"cat","age":5,"name":"Susa","mood":"happy"},{"hasOwner":false,"breed":"doge","age":9}]},{"name":"Mutlu","age":29,"pets":[]}]
