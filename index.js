@@ -33,6 +33,10 @@ const Person = class {
     pet.name = name;
     pet.hasOwner = true;
   }
+
+  playWithPet(pet) {
+    pet.mood = 'happy';
+  }
 };
 
 const Pet = class {
@@ -68,4 +72,5 @@ alper.adoptPet(shelterIstanbul);
 
 alper.namePet(alper.pets[1], "Susa");
 
+alper.playWithPet(alper.pets[1]);
 console.log(alper.pets);
