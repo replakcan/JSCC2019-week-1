@@ -1,1 +1,1 @@
-Homework from Armagan Amcalar | JSCC2019 youtube playlist
+week-1-homework of Armagan Amcalar | JSCC2019 youtube playlist
