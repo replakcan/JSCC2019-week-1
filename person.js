@@ -1,8 +1,10 @@
+const Pet = require('./pet');
+
 const Person = class {
-  constructor(name, age) {
+  constructor(name, age, pets) {
     this.name = name;
     this.age = age;
-    this.pets = [];
+    this.pets = pets;
   }
 
   adoptPet(shelter) {
@@ -29,6 +31,12 @@ const Person = class {
 
   playWithPet(pet) {
     pet.mood = "happy";
+  }
+
+  static create(file) {
+
+    this.pets = file.pets.map((pet) => new Pet(pet.breed, pet.age));
+    return new Person(file.name, file.age, file.pets);
   }
 };
 
