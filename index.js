@@ -1,4 +1,4 @@
-const Person = require('./person');
+const Person = require("./person");
 /* const Pet = require('./pet');
 const AnimalShelter = require('./animalShelter'); */
 const Database = require("./database");
@@ -44,12 +44,13 @@ const cbFunc = (err, file) => {
     console.log("FILE: ", file);
 
     const alper = Person.create(file[0]);
-    console.log('alper: ', (alper.pets[1]));
-    alper.playWithPet(alper.pets[0])
-    console.log(alper.pets[0])
-    alper.pets[1].talk()
+    console.log("alper: ", alper.pets[1]);
+    alper.playWithPet(alper.pets[0]);
+    console.log(alper.pets[0]);
+    alper.pets[1].talk();
   }
 };
 Database.load("person.json", cbFunc);
 
-
+const alfonzo = new Person("alfonso", 23, [], 1);
+console.log("alfonso: ", alfonzo);

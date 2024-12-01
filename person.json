@@ -3,16 +3,18 @@
     "name": "Alper",
     "age": 28,
     "pets": [
-      { "hasOwner": false, "breed": "dog", "age": 3 },
+      { "hasOwner": false, "breed": "dog", "age": 3, "id": 1 },
       {
         "hasOwner": true,
         "breed": "cat",
         "age": 5,
         "name": "Susa",
-        "mood": "happy"
+        "mood": "happy",
+        "id": 2
       },
-      { "hasOwner": false, "breed": "doge", "age": 9 }
-    ]
+      { "hasOwner": false, "breed": "doge", "age": 9, "id": 3 }
+    ],
+    "id": 1
   },
-  { "name": "Mutlu", "age": 29, "pets": [] }
+  { "name": "Mutlu", "age": 29, "pets": [], "id": 2 }
 ]
