@@ -1,7 +1,10 @@
 const Person = require("./person");
-/* const Pet = require('./pet');
-const AnimalShelter = require('./animalShelter'); */
+const Pet = require("./pet");
+const AnimalShelter = require("./animalShelter");
 const Database = require("./database");
+const PersonService = require("./services/person-service");
+const ShelterService = require("./services/shelter-service");
+const personService = require("./services/person-service");
 
 /*
     There should be a person who can go and adopt a pet from a shelter,
@@ -36,7 +39,7 @@ console.log(alper.pets); */
 /* Database.save('person.json', people);
 Database.save('shelter.json', shelterIstanbul); */
 
-const cbFunc = (err, file) => {
+/* const cbFunc = (err, file) => {
   if (err) {
     console.log("errorumsumide: ", err);
     return;
@@ -53,4 +56,29 @@ const cbFunc = (err, file) => {
 Database.load("person.json", cbFunc);
 
 const alfonzo = new Person("alfonso", 23, [], 1);
-console.log("alfonso: ", alfonzo);
+console.log("alfonso: ", alfonzo); */
+
+async function main() {
+  const susa = new Pet("cat", 5, 1);
+  const zorro = new Pet("dog", 12, 2);
+
+  const shelterIst = new AnimalShelter("Istanbul", [susa, zorro], 1);
+
+  const alper = new Person("Alper", 28, [], 1);
+  const mutlu = new Person("Mutlu", 20, [], 2);
+
+  alper.adoptPet(shelterIst);
+  alper.adoptPet(shelterIst);
+
+  alper.namePet(susa, "susa");
+  alper.namePet(zorro, "zorro");
+
+  alper.playWithPet(susa);
+  alper.playWithPet(zorro);
+
+  const people = await PersonService.findAll()
+
+  await PersonService.del(9)
+}
+
+main()
