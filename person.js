@@ -33,10 +33,13 @@ const Person = class {
     pet.mood = "happy";
   }
 
-  static create(file) {
+  static create({name, age, pets}) {
 
-    this.pets = file.pets.map((pet) => new Pet(pet.breed, pet.age));
-    return new Person(file.name, file.age, file.pets);
+    const person = new Person(name, age, pets);
+
+    person.pets = pets.map((pet) => new Pet(pet.breed, pet.age));
+    console.log(person.pets);
+    return person;
   }
 };
 

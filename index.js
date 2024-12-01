@@ -45,8 +45,11 @@ const cbFunc = (err, file) => {
 
     const alper = Person.create(file[0]);
     console.log('alper: ', (alper.pets[1]));
-
+    alper.playWithPet(alper.pets[0])
+    console.log(alper.pets[0])
+    alper.pets[1].talk()
   }
 };
 Database.load("person.json", cbFunc);
+
 
