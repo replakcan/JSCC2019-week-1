@@ -22,12 +22,7 @@ const PersonSchema = new mongoose.Schema({
   ],
 });
 
-PersonSchema.methods.adopt = async function (pet) {
-  this.pets.push(pet);
-  pet.owners.push(this);
-  await pet.save();
-  await this.save();
-};
+
 
 PersonSchema.plugin(require("mongoose-autopopulate"));
 

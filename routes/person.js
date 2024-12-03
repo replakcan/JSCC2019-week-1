@@ -1,5 +1,5 @@
 const express = require("express");
-const router = express.Router()
+const router = express.Router();
 
 const PersonService = require("../services/person-service");
 const PetService = require("../services/pet-service");
@@ -23,16 +23,16 @@ router.post("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   const id = req.params.id;
   await PersonService.del(id);
-  res.send('ok');
+  res.send("ok");
 });
 
 router.post("/:id/pets", async (req, res) => {
   const id = req.params.id;
   const person = await PersonService.find(id);
-  const pet = await PetService.find(req.body.pet)
+  const pet = await PetService.find(req.body.pet);
 
-  person.adopt(pet)
+  await PersonService.adoptPet(person, pet);
   res.send(pet);
 });
 
-module.exports = router
+module.exports = router;
