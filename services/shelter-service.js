@@ -1,10 +1,8 @@
-const BaseService = require('./base-service')
-const Shelter = require('../models/animalShelter');
+const BaseService = require("./base-service");
+const ShelterModel = require("../models/animalShelter");
 
 class PersonService extends BaseService {
-    constructor() {
-        super(Shelter, `${__dirname}/../shelter.json`)
-    }
+  model = ShelterModel;
 }
 
-module.exports = new PersonService()
+module.exports = new PersonService();

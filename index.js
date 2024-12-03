@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 
 const personRouter = require("./routes/person");
 const petRouter = require("./routes/pet");
@@ -9,14 +8,14 @@ require("./mongo-connection");
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "pug");
-app.use(bodyParser.json());
 
 app.use("/person", personRouter);
 app.use("/pet", petRouter);
-app.use("/animalShelter", animalShelterRouter);
+app.use("/shelter", animalShelterRouter);
 
 app.get("/", (req, res) => {
   // res.send('Hello ')

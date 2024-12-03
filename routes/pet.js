@@ -1,7 +1,8 @@
 const express = require("express");
-const router = express.Router()
+const router = express.Router();
 
 const PetService = require("../services/pet-service");
+const PersonService = require("../services/person-service");
 
 router.get("/all", async (req, res) => {
   const pets = await PetService.findAll();
@@ -22,7 +23,7 @@ router.post("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   const id = req.params.id;
   await PetService.del(id);
-  res.send('ok');
+  res.send("ok");
 });
 
-module.exports = router
+module.exports = router;

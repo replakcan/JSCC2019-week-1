@@ -1,4 +1,41 @@
-const Pet = require("./pet");
+const mongoose = require("mongoose");
+
+const PersonSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    minLength: 2,
+  },
+  age: {
+    type: Number,
+    required: true,
+    min: 18,
+  },
+  pets: [
+    {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: "Pet",
+      autopopulate: {
+        maxDepth: 1,
+      },
+    },
+  ],
+});
+
+PersonSchema.methods.adopt = async function (pet) {
+  this.pets.push(pet);
+  pet.owners.push(this);
+  await pet.save();
+  await this.save();
+};
+
+PersonSchema.plugin(require("mongoose-autopopulate"));
+
+const PersonModel = mongoose.model("Person", PersonSchema);
+
+module.exports = PersonModel;
+
+/* const Pet = require("./pet");
 
 const Person = class {
   constructor(name, age, pets = [], id) {
@@ -44,3 +81,4 @@ const Person = class {
 };
 
 module.exports = Person;
+ */

@@ -1,10 +1,8 @@
-const BaseService = require('./base-service')
-const Pet = require('../models/pet')
+const BaseService = require("./base-service");
+const PetModel = require("../models/pet");
 
 class PetService extends BaseService {
-    constructor() {
-        super(Pet, `${__dirname}/../pet.json`)
-    }
+  model = PetModel;
 }
 
-module.exports = new PetService()
+module.exports = new PetService();

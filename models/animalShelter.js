@@ -1,4 +1,14 @@
-const AnimalShelter = class {
+const mongoose = require("mongoose");
+
+const ShelterSchema = new mongoose.Schema({
+  location: String,
+});
+
+const ShelterModel = mongoose.model("Shelter", ShelterSchema);
+
+module.exports = ShelterModel;
+
+/* const AnimalShelterModel = class {
   constructor(location, animalList, id) {
     this.location = location;
     this.animalList = animalList;
@@ -7,8 +17,8 @@ const AnimalShelter = class {
   }
 
   static create(location, animalList) {
-    return new AnimalShelter(location, animalList, id);
+    return new AnimalShelterModel(location, animalList, id);
   }
 };
 
-module.exports = AnimalShelter;
+module.exports = AnimalShelterModel; */
