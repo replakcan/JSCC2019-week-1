@@ -1,0 +1,15 @@
+[
+  { "name": "Mutlu", "age": 20, "pets": [], "id": 4 },
+  {
+    "name": "Alper",
+    "age": 28,
+    "pets": [
+      { "hasOwner": false, "breed": "cat", "age": 5, "id": 1 },
+      { "hasOwner": false, "breed": "dog", "age": 12, "id": 2 }
+    ],
+    "id": 5
+  },
+  { "name": "Mutlu", "age": 20, "pets": [], "id": 6 },
+  { "name": "dede", "age": 80, "pets": [], "id": 8 },
+  { "name": "Frankestein", "age": 18, "pets": [], "id": 9 }
+]
