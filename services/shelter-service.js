@@ -1,5 +1,5 @@
 const BaseService = require('./base-service')
-const Shelter = require('../animalShelter');
+const Shelter = require('../models/animalShelter');
 
 class PersonService extends BaseService {
     constructor() {

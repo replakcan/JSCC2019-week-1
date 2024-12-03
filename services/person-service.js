@@ -1,5 +1,5 @@
 const BaseService = require('./base-service')
-const Person = require('../person')
+const Person = require('../models/person')
 
 class PersonService extends BaseService {
     constructor() {
