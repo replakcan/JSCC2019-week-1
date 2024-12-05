@@ -9,11 +9,23 @@ router.get("/all", async (req, res) => {
   res.render("list", { items: people });
 });
 
+router.get('/all/json', async (req, res) => {
+  const people = await PersonService.findAll()
+  res.send(people)
+})
+
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
   const person = await PersonService.find(id);
+  if (!person) res.status(404)
   res.send(person);
 });
+
+router.get('/:id/json', async (req, res) => {
+  const person = await PersonService.find(req.params.id)
+  if (!person) res.status(404)
+  res.send(person)
+})
 
 router.post("/", async (req, res) => {
   const person = await PersonService.add(req.body);

@@ -9,9 +9,22 @@ router.get("/all", async (req, res) => {
   res.render("list", { items: pets });
 });
 
+router.get('/all/json', async (req, res) => {
+  const pets = await PersonService.findAll()
+  res.send(pets)
+})
+
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
   const pet = await PetService.find(id);
+  if (!pet) res.status(404)
+  res.send(pet);
+});
+
+router.get("/:id/json", async (req, res) => {
+  const id = req.params.id;
+  const pet = await PetService.find(id);
+  if (!pet) res.status(404);
   res.send(pet);
 });
 
