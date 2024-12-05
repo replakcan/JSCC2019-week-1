@@ -18,7 +18,10 @@
     "pug": "^3.0.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
     "ava": "^6.2.0",
+    "babel-plugin-istanbul": "^7.0.0",
     "nodemon": "^3.1.7",
     "nyc": "^17.1.0",
     "supertest": "^7.0.0"

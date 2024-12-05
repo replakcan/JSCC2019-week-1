@@ -104,3 +104,43 @@ test("Get list of people", async (t) => {
   // check the response whether at least there is 1 element
   t.true(jsonRes.body.length > 0);
 });
+
+/* test('User can adopt a pet', async t => {
+    const annaUser = { name: 'Anna Pavlova', age: 29, pets: [] }
+  
+    const cipetpet = { breed: 'bombastik',
+    age: 3,
+    owners: []}
+  
+    // create a person
+    const createdPerson = (await request(app)
+    .post('/person')
+    .send(annaUser)).body
+  
+    // create a meetup
+    const createdPet = (await request(app)
+    .post('/pet')
+    .send(cipetpet)).body
+  
+    // attend to the meetup with the user
+    const addPetRes = await request(app)
+    .post(`/person/${createdPerson._id}/pets`)
+    .send( {pet: createdPet._id} )
+  
+    // check the server response success
+    t.is(addPetRes.status, 200)
+  
+    // response body is the altered data of the user
+    const personAltered = addPetRes.body
+  
+    // check that user has that meetup on their pets
+    t.is(personAltered.pets[0]._id, createdPet._id)
+  
+    // check that user's meetup is the meetup we created
+    t.deepEqual(personAltered.pets[0], createdPet)
+  
+    // personAltered is not the same with the first created user
+    // createdPerson had no pets
+    // personAltered has the meetup amongst their list of pets
+    t.notDeepEqual(personAltered, createdPerson)
+  }) */
