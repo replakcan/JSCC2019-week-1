@@ -10,7 +10,7 @@ router.get("/all", async (req, res) => {
 });
 
 router.get('/all/json', async (req, res) => {
-  const pets = await PersonService.findAll()
+  const pets = await PetService.findAll()
   res.send(pets)
 })
 

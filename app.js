@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors')
 
 const personRouter = require("./routes/person");
 const petRouter = require("./routes/pet");
@@ -7,6 +8,7 @@ const animalShelterRouter = require("./routes/animalShelter");
 require("./mongo-connection");
 
 const app = express();
+app.use(cors())
 
 app.set("view engine", "pug");
 app.use(express.json());
